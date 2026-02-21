@@ -304,7 +304,7 @@ document.querySelectorAll('.pricing-card button, .plan-btn').forEach(btn => {
         e.stopPropagation();
         const card = this.closest('.pricing-card');
         const planName = card ? card.querySelector('h3')?.textContent : 'Premium Plan';
-        const price = card ? card.querySelector('.pricing-price')?.textContent : 'Contact us';
+        const price = card ? card.querySelector('.price')?.textContent : 'Contact us';
         const message = `Hi! I'm interested in the ${planName} plan (${price}). Can you provide more details?`;
         const whatsappUrl = `https://wa.me/917297810859?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
