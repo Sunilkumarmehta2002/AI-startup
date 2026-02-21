@@ -26,7 +26,9 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -35,6 +37,8 @@ body {
     color: var(--text-primary);
     overflow-x: hidden;
     line-height: 1.6;
+    will-change: scroll-position;
+    contain: layout style paint;
 }
 
 body::before {
@@ -55,19 +59,18 @@ body::before {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(15, 20, 25, 0.85);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
+    background: rgba(15, 20, 25, 0.98);
     border-bottom: 1px solid var(--glass-border);
     z-index: 1000;
-    transition: all 0.4s ease;
+    transition: box-shadow 0.3s ease;
+    will-change: box-shadow;
+    contain: layout style;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .navbar.scrolled {
-    background: rgba(15, 20, 25, 0.95);
-    -webkit-backdrop-filter: blur(25px);
-    backdrop-filter: blur(25px);
-    box-shadow: var(--shadow-glass);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
@@ -230,8 +233,8 @@ body::before {
     background: var(--glass-bg);
     color: var(--text-primary);
     border: 2px solid var(--glass-border);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    transform: translateZ(0);
 }
 
 .btn-secondary:hover {
@@ -252,10 +255,11 @@ body::before {
     border: 1px solid var(--glass-border);
     border-radius: 20px;
     padding: 2rem;
-    -webkit-backdrop-filter: blur(15px);
-    backdrop-filter: blur(15px);
     box-shadow: var(--shadow-glass);
     transition: all 0.4s ease;
+    will-change: transform;
+    transform: translateZ(0);
+    contain: layout style;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -344,11 +348,12 @@ body::before {
     border-radius: 25px;
     padding: 2.5rem;
     text-align: center;
-    -webkit-backdrop-filter: blur(15px);
-    backdrop-filter: blur(15px);
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    will-change: transform;
+    transform: translateZ(0);
+    contain: layout style;
 }
 
 .service-card:hover {
@@ -416,9 +421,10 @@ body::before {
     border-radius: 25px;
     padding: 3rem 2rem;
     text-align: center;
-    -webkit-backdrop-filter: blur(15px);
-    backdrop-filter: blur(15px);
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
+    will-change: transform;
+    transform: translateZ(0);
+    contain: layout style;
 }
 
 .pricing-card.featured {
@@ -487,11 +493,12 @@ body::before {
     border-radius: 25px;
     padding: 3rem 2rem;
     text-align: center;
-    -webkit-backdrop-filter: blur(15px);
-    backdrop-filter: blur(15px);
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    will-change: transform;
+    transform: translateZ(0);
+    contain: layout style;
 }
 
 .founder-card::before {
@@ -560,13 +567,14 @@ body::before {
 /* Award Section */
 .award-section {
     background: linear-gradient(135deg, rgba(15, 20, 25, 0.9) 0%, rgba(30, 41, 59, 0.8) 100%);
-    -webkit-backdrop-filter: blur(30px);
-    backdrop-filter: blur(30px);
     position: relative;
     padding: 6rem 2rem;
     overflow: hidden;
     border-top: 4px solid transparent;
     border-image: var(--gradient-premium) 1;
+    will-change: transform;
+    transform: translateZ(0);
+    contain: layout style;
 }
 
 .award-container {
@@ -591,10 +599,11 @@ body::before {
     box-shadow: 0 30px 100px rgba(234, 179, 8, 0.2);
     background: var(--glass-bg);
     border: 2px solid rgba(234, 179, 8, 0.3);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
     transition: all 0.4s ease;
     max-width: 300px;
+    will-change: transform;
+    transform: translateZ(0);
+    contain: layout style;
 }
 
 .award-image:hover {
@@ -612,13 +621,14 @@ body::before {
 .award-text {
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
     border-radius: 30px;
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
     border: 2px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 30px 90px rgba(0, 0, 0, 0.15);
     padding: 3rem;
     position: relative;
     transition: all 0.4s ease;
+    will-change: transform;
+    transform: translateZ(0);
+    contain: layout style;
 }
 
 .award-text:hover {
@@ -696,9 +706,10 @@ body::before {
     background: var(--glass-bg);
     border-radius: 15px;
     border: 1px solid var(--glass-border);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
     transition: all 0.3s ease;
+    will-change: transform;
+    transform: translateZ(0);
+    contain: layout style;
 }
 
 .contact-item:hover {
@@ -727,8 +738,9 @@ body::before {
     padding: 3rem;
     border-radius: 25px;
     border: 1px solid var(--glass-border);
-    -webkit-backdrop-filter: blur(15px);
-    backdrop-filter: blur(15px);
+    will-change: transform;
+    transform: translateZ(0);
+    contain: layout style;
 }
 
 .form-group {
@@ -763,11 +775,11 @@ body::before {
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.05);
     color: var(--text-primary);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     font-family: 'Inter', sans-serif;
     font-size: 0.95rem;
+    will-change: border-color;
+    contain: layout style;
 }
 
 .form-group input::placeholder,
@@ -946,11 +958,12 @@ body::before {
     border: 2px solid rgba(234, 179, 8, 0.2);
     border-radius: 25px;
     padding: 2.5rem 2rem;
-    -webkit-backdrop-filter: blur(15px);
-    backdrop-filter: blur(15px);
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
+    will-change: transform;
+    transform: translateZ(0);
+    contain: layout style;
 }
 
 .ai-card::before {
@@ -1053,11 +1066,12 @@ body::before {
     border-radius: 20px;
     padding: 2rem;
     text-align: center;
-    -webkit-backdrop-filter: blur(15px);
-    backdrop-filter: blur(15px);
     transition: all 0.4s ease;
     position: relative;
     z-index: 1;
+    will-change: transform;
+    transform: translateZ(0);
+    contain: layout style;
 }
 
 .step:hover {
@@ -1112,11 +1126,12 @@ body::before {
     border-radius: 20px;
     padding: 2rem;
     text-align: center;
-    -webkit-backdrop-filter: blur(15px);
-    backdrop-filter: blur(15px);
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
+    will-change: transform;
+    transform: translateZ(0);
+    contain: layout style;
 }
 
 .feature-item::before {
@@ -1198,12 +1213,13 @@ body::before {
     border: 2px solid var(--glass-border);
     border-radius: 25px;
     padding: 2.5rem;
-    -webkit-backdrop-filter: blur(15px);
-    backdrop-filter: blur(15px);
     transition: all 0.4s ease;
     position: relative;
     display: flex;
     flex-direction: column;
+    will-change: transform;
+    transform: translateZ(0);
+    contain: layout style;
 }
 
 .pricing-card.featured {
@@ -1333,11 +1349,12 @@ body::before {
     background: linear-gradient(135deg, var(--glass-bg), rgba(234, 179, 8, 0.05));
     border: 2px solid rgba(234, 179, 8, 0.2);
     border-radius: 25px;
-    -webkit-backdrop-filter: blur(15px);
-    backdrop-filter: blur(15px);
     padding: 3rem;
     margin: 3rem 0;
     transition: all 0.4s ease;
+    will-change: transform;
+    transform: translateZ(0);
+    contain: layout style;
 }
 
 .award-section:hover {
@@ -1747,10 +1764,11 @@ body::before {
         width: 100%;
         text-align: center;
         transition: 0.3s;
-        -webkit-backdrop-filter: blur(20px);
-        backdrop-filter: blur(20px);
         padding: 2rem 0;
         gap: 0;
+        will-change: left;
+        transform: translateZ(0);
+        contain: layout style;
     }
 
     .nav-menu.active {
@@ -1942,11 +1960,12 @@ body::before {
         width: 100%;
         text-align: center;
         transition: 0.3s;
-        -webkit-backdrop-filter: blur(25px);
-        backdrop-filter: blur(25px);
         padding: 1.5rem 0;
         max-height: calc(100vh - 60px);
         overflow-y: auto;
+        will-change: left;
+        transform: translateZ(0);
+        contain: layout style;
     }
 
     .nav-menu.active {
