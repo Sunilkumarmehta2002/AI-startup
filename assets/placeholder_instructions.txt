@@ -1,0 +1,21 @@
+AWARD IMAGES SETUP INSTRUCTIONS
+================================
+
+Please add the following images to this assets folder:
+
+1. award1.jpg - The first award ceremony image showing Sunil Kumar Mehta receiving the award from Ankit Agrawal
+2. award2.jpg - The second award ceremony image with both Ankit Agrawal and Sunil Kumar Mehta
+
+Image Requirements:
+- Format: JPG or PNG
+- Recommended size: 800x600 pixels or larger
+- Good quality with clear visibility of both people
+- Professional event photography
+
+The images should be renamed to exactly:
+- award1.jpg
+- award2.jpg
+
+These will automatically display in the About Us section of the website.
+
+Current placeholder images have been set up in the HTML, you just need to replace them with the actual award photos.

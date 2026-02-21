@@ -31,7 +31,7 @@ def serve_website(port=None):
     try:
         with socketserver.TCPServer(("", port), CustomHTTPRequestHandler) as httpd:
             print(f"""
-🚀 AI Growth Hub India - Local Server Started!
+🚀 NexusAI Pro - Local Server Started!
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 📁 Serving from: {WEBSITE_DIR}
 🌐 Local URL: http://localhost:{port}
