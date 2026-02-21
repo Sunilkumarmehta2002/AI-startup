@@ -133,7 +133,7 @@ if (contactForm) {
             
             // Redirect to WhatsApp with pre-filled message
             const whatsappMessage = `Hi! I'm ${name} from ${businessType}. I'm interested in your AI automation services. My email: ${email}, Phone: ${phone}. ${message ? 'Additional info: ' + message : ''}`;
-            const whatsappUrl = `https://wa.me/91XXXXXXXXXX?text=${encodeURIComponent(whatsappMessage)}`;
+            const whatsappUrl = `https://wa.me/917297810859?text=${encodeURIComponent(whatsappMessage)}`;
             window.open(whatsappUrl, '_blank');
             
         }, 2000);
@@ -234,7 +234,7 @@ document.querySelectorAll('.service-card').forEach(card => {
     card.addEventListener('click', function() {
         const serviceName = this.querySelector('h3').textContent;
         const message = `Hi! I want to learn more about your ${serviceName} service.`;
-        const whatsappUrl = `https://wa.me/91XXXXXXXXXX?text=${encodeURIComponent(message)}`;
+        const whatsappUrl = `https://wa.me/917297810859text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
     });
 });
@@ -246,7 +246,7 @@ document.querySelectorAll('.plan-btn').forEach(btn => {
         const planName = this.closest('.pricing-card').querySelector('h3').textContent;
         const price = this.closest('.pricing-card').querySelector('.price').textContent;
         const message = `Hi! I'm interested in the ${planName} plan (${price}). Can you provide more details?`;
-        const whatsappUrl = `https://wa.me/91XXXXXXXXXX?text=${encodeURIComponent(message)}`;
+        const whatsappUrl = `https://wa.me/917297810859?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
     });
 });
